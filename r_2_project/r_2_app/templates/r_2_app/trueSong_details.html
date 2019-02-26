@@ -1,0 +1,28 @@
+{% extends 'r_2_app/song_details.html' %}
+
+{% block header %}
+{{ moreDets.song_band }}
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <tr>
+        <td>Album:</td>
+        <td>{{ moreDets.song_album }}</td>
+    </tr>
+    <tr>
+        <td>Lyrics:</td>
+        <td><a href="{{ moreDets.song_lyrics }}">Lyrics</a></td>
+    </tr>
+    <tr>
+        <td>Audio:</td>
+        <td><a href="{{ moreDets.song_audio }}">Audio</a></td>
+    </tr>
+</table>
+<p>
+<a href="{% url 'song_details' moreDets.song_id %}">Go Back to Previous Page</a>
+</p>
+<p>
+<a href="{% url 'list_songs' %}">Go to Home</a>
+</p>
+{% endblock %}
